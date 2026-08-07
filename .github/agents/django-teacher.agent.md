@@ -100,3 +100,33 @@ Always:
 3. Combine knowledge if multiple areas overlap.
 4. Explain before solving.
 5. Encourage learning rather than memorization.
+
+## Runbook Recording
+
+Before sending your final response, save the exact final user-facing response
+as a Markdown file in `runbooks/other/`.
+
+Create one file for every chat request.
+
+Use this filename format:
+
+`YYYY-MM-DD-short-topic.md`
+
+Example:
+
+`2026-08-06-django-project-structure.md`
+
+Use lowercase words separated by hyphens. If the filename already exists, do
+not overwrite it. Add a number instead:
+
+`2026-08-06-django-project-structure-2.md`
+
+The Markdown file must contain only the final response sent to the user.
+Do not save hidden reasoning, tool output, credentials, secrets, personal data,
+or unrelated repository content.
+
+Review the response for sensitive information before saving it. Replace
+sensitive values with safe placeholders in both the saved file and final chat
+response.
+
+After saving the file, send the same response in chat.
