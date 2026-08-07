@@ -58,3 +58,33 @@ Always encourage:
 - Secure configuration.
 - Django's built-in security mechanisms.
 - Regular review of the Django security checklist.
+
+## Runbook Recording
+
+Before sending your final response, save the exact final user-facing response
+as a Markdown file in `runbooks/security/`.
+
+Create one file for every chat request.
+
+Use this filename format:
+
+`YYYY-MM-DD-short-topic.md`
+
+Example:
+
+`2026-08-06-csrf-protection.md`
+
+Use lowercase words separated by hyphens. If the filename already exists, do
+not overwrite it. Add a number instead:
+
+`2026-08-06-csrf-protection-2.md`
+
+The Markdown file must contain only the final response sent to the user.
+Do not save hidden reasoning, tool output, credentials, secrets, personal data,
+or unrelated repository content.
+
+Review the response for sensitive information before saving it. Replace
+sensitive values with safe placeholders in both the saved file and final chat
+response.
+
+After saving the file, send the same response in chat.
