@@ -1,0 +1,12 @@
+{
+    "servers": {
+        "django-teacher-obsidian": {
+            "type": "stdio",
+            "command": "python",
+            "args": [
+                "-m",
+                "integrations.obsidian.mcp_server"
+            ]
+        }
+    }
+}

@@ -4,7 +4,6 @@ from .formatter import ObsidianFormatter
 from pathlib import Path
 
 
-
 class ObsidianService:
     """High-level service for saving notes to Obsidian."""
 
