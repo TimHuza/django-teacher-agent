@@ -17,6 +17,8 @@ Create one file per request. Name it descriptively with the current date and a l
 
 The file must contain only the exact final response that will be sent to the user. Do not include hidden reasoning, tool output, credentials, secrets, personal data, or unrelated repository content. Before writing, review the response for sensitive information; replace any sensitive values in both the response and runbook with safe placeholders. After saving the file, send the same response text in chat.
 
+Saving the Markdown file to the workspace (above) is a separate action from syncing it to Obsidian. If the `django-teacher-obsidian` MCP tool (`save_runbook_to_obsidian`) is available in the current session, call it immediately after writing the workspace file, using the same title and content, and mapping the destination folder to the `category` argument using the lowercase, hyphenated category folder names that already exist in the Obsidian vault: `runbooks/concepts/` → `concepts`, `runbooks/code-explanation/` → `code-explanation`, `runbooks/debugging/` → `debugging`, `runbooks/security/` → `security`, `runbooks/other/` (Coding Assistant Agent) → `coding`, architecture work → `architecture`, any other agent or request type → `other`. If the tool is not available (server not started, or `config/obsidian.json` has `enabled: false`), skip this step silently — the workspace copy is still saved.
+
 ---
 
 ## Role
