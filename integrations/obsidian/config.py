@@ -37,7 +37,12 @@ class ObsidianConfig:
 
         self.base_folder = data.get("base_folder", "Django").strip()
 
-        if not self.base_folder:
+        if "base_folder" in data:
+            # An explicit empty string means "save directly in the vault
+            # root", so it is respected as-is instead of falling back to
+            # the "Django" default below.
+            self.base_folder = data["base_folder"].strip()
+        else:
             self.base_folder = "Django"
 
         if self.enabled:

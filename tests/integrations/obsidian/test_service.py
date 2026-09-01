@@ -86,3 +86,35 @@ def test_integration_is_enabled(tmp_path):
     service = ObsidianService(config_path)
 
     assert service.enabled is True
+
+
+def test_save_runbook_with_empty_base_folder_uses_vault_root(tmp_path):
+    vault_path = tmp_path / "vault"
+    vault_path.mkdir()
+
+    config_path = tmp_path / "obsidian.json"
+
+    config = {
+        "enabled": True,
+        "vault_path": str(vault_path),
+        "base_folder": "",
+    }
+
+    config_path.write_text(
+        json.dumps(config),
+        encoding="utf-8",
+    )
+
+    service = ObsidianService(config_path)
+
+    note_path = service.save_runbook(
+        title="ORM Basics",
+        content="The Django ORM lets you query the database using Python.",
+        category="concepts",
+        tags=["django", "orm"],
+    )
+
+    expected_path = vault_path / "concepts" / "ORM Basics.md"
+
+    assert note_path == expected_path
+    assert note_path.exists()
